@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+form{
+	width: 200px;
+}
+input {
+	margin-top: 5px;
+}
+table{
+	border-collapse: collapse;
+	margin-bottom: -1px;
+	
+}
+td{
+	width: 100px;
+	border:1px solid grey;
+	
+}
