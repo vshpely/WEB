@@ -13,24 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class IndexController {
 
-	private List<Person> list = new ArrayList<Person>();
 
 	@RequestMapping("/")
 	public String indexView(Model model) {
-		model.addAttribute("persons", list);
 		return "index";
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String indexPost(@RequestParam(value="age") int age,
-			@RequestParam String name) {
-		list.add(new Person(age, name));
-		return "redirect:/";
-	}
-	
-	@RequestMapping("/{id}")
-	public String delete(@PathVariable int id){
-		list.remove(id);
-		return "redirect:/";
-	}
 }
