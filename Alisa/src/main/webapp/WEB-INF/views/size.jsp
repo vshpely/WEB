@@ -16,6 +16,7 @@
 		<input name="sizeName" id="sizeName"></input>
 		<label for="ukrSize">Український розмір</label>
 		<input name="ukrSize" id="ukrSize"></input>
+		<br>
 		<input type="submit" value="OK"> 
 	</form>
 	
@@ -31,13 +32,7 @@
 	</table>
 	</c:forEach> 
 	<a href="/Alisa/admin">Назад</a>
-	
-	<form>
-	<select name="size.id">
-	<c:forEach var="size" items="${sizes}">
-	<option value="${size.id}">${size.sizeName}</option>
-	</c:forEach>
-	</select>
+
 	
 </body>
 </html>

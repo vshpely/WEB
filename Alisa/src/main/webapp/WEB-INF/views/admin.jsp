@@ -22,10 +22,25 @@
 		<div class="center">
 			<div class="center-right">
 			
+			<c:forEach var="product" items="${products}">
+			<table>
+				<tr>
+					<td><c:url value="${product.id}"></c:url></td>
+					<td>${product.articul}</td>
+					<td>${product.productName}</td>
+					<td>${product.price}</td>
+					<td>${product.producer.producerName}</td>
+					<td>${product.size.sizeName}</td>
+					<td>${product.pidCategory.namePidkategory}</td>
+					<td><a href="admin/${product.id}">delete</a></td>
+				</tr>
+			</table>
+			</c:forEach> 
+			
 			</div>
 			<div class="center-left">
 			<ul>
-				<li><a href="#">Товар</a></li>
+				<li><a href="product">Товар</a></li>
 				<li><a href="category">Категорії</a></li>
 				<li><a href="size">Розміри</a></li>
 				<li><a href="producer">Виробники</a></li>

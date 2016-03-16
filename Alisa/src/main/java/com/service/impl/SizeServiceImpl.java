@@ -36,5 +36,9 @@ public class SizeServiceImpl implements SizeService {
 	public Iterable<Size> getAll() {
 		return sizeRepository.findAll();
 	}
+	
+	public Size findById(int id){
+		return sizeRepository.findOne(id);
+	}
 
 }

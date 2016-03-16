@@ -65,6 +65,20 @@
 	border-radius:5px;
 	background: lightgrey;
 }
+
+.center-right table{
+	border-collapse: collapse;
+	margin-bottom: -1px;
+	margin-left: 1px;
+}
+.center-right table:FIRST-CHILD{
+	margin-top: 1px;
+}
+
+.center-right td{
+	width: 100px;
+	border:1px solid grey;
+}
 .footer{
 	clear: both;
 	

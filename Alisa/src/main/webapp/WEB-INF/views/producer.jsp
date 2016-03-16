@@ -13,6 +13,7 @@
 	<form method="post" accept-charset="UTF-8">
 		<label for="producerName">Виробник</label>
 		<input name="producerName" id="producerName"></input>
+		<br>
 		<input type="submit" value="OK"> 
 	</form>
 	

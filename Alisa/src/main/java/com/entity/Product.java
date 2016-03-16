@@ -16,7 +16,7 @@ public class Product {
 
 	private String articul;
 	
-	private String ProductName;
+	private String productName;
 
 	@ManyToOne
 	private Size size;
@@ -45,15 +45,12 @@ public class Product {
 		this.id = id;
 	}
 
-	
-
-
 	public String getProductName() {
-		return ProductName;
+		return productName;
 	}
 
 	public void setProductName(String productName) {
-		ProductName = productName;
+		this.productName = productName;
 	}
 
 	public String getArticul() {

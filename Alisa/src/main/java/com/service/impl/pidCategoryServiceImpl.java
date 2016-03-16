@@ -38,5 +38,8 @@ public class pidCategoryServiceImpl implements pidCategoryService {
 	public Iterable<pidCategory> getAll() {
 		return pidCategoryRepository.findAll();
 	}
+	public pidCategory findById(int id){
+		return pidCategoryRepository.findOne(id);
+	}
 
 }
