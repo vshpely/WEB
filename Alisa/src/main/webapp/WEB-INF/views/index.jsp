@@ -18,7 +18,8 @@
 			<div class="header-login-menu">
 				<ul>
 					<li><a href="admin">Вхід</a></li>
-					<li><a href="#">Контакти</a></li>
+					<li><a href="login">Вхід 1</a></li>
+					<li><a href="registration">Реєстрація</a></li>
 				</ul>
 			</div>
 		</div>

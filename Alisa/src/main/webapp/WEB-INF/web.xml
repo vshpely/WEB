@@ -22,7 +22,7 @@
 	<welcome-file-list>
 		<welcome-file>/</welcome-file>
 	</welcome-file-list>
-	
+	<!-- Фільтр підтримки UTF-8 - вирішує проблему з кирилицею -->
 	<filter> 
     <filter-name>encodingFilter</filter-name> 
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
@@ -34,7 +34,7 @@
        <param-name>forceEncoding</param-name> 
        <param-value>true</param-value> 
     </init-param> 
-</filter> 
+	</filter> 
 
 <filter-mapping> 
     <filter-name>encodingFilter</filter-name> 

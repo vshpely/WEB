@@ -1,15 +1,14 @@
 package com.service;
 
-import java.util.List;
 
 import com.entity.*;
 
 public interface UserService {
 	
-	void save(String login);
+	void save(String login, String password, String email, String phone);
 	void delete(Integer id);
 	User getByLogin(String login);
 	User editUser(User user);
-	List<User> getAll();
+	Iterable<User> getAll();
 
 }

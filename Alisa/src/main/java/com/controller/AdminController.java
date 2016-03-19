@@ -45,8 +45,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/product", method=RequestMethod.POST)
-	public String save(@RequestParam String productName, String articul, double price, int size_id, int pidCategory_id){		
-		productServiceImpl.save(productName, articul, price, sizeService.findById(size_id), pidCategoryServiceImpl.findById(pidCategory_id));
+	public String save(@RequestParam String articul, String productName, double price, int size_id, int pidCategory_id){		
+		productServiceImpl.save(articul, productName, price, sizeService.findById(size_id), pidCategoryServiceImpl.findById(pidCategory_id));
 		return "redirect:/product";
 	}
 
