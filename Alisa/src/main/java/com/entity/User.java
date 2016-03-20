@@ -2,8 +2,10 @@ package com.entity;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,7 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
 
 //Об'єкти цього класу повинні відображатись в базі даних
 @Entity
@@ -28,7 +30,8 @@ public class User {
 	// GenerationType.IDENTITY - не працює в mysql server
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	
+	
 	private String login;
 
 	private String password;
