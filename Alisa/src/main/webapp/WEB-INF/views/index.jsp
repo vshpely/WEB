@@ -9,21 +9,58 @@
 <%@include file='css/index.css' %>
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Аліса</title>
 </head>
 <body class="page">
 	<div class="header">
 		<div class="header-login">
-			<div class="header-login-logo"></div>
+			<div class="header-login-logo">
+			<ul>
+				<c:forEach var="categoryProduct" items="${categoryProducts}">
+				<li>
+				<a href="#">${categoryProduct.nameCategory}</a>
+				</li>
+				</c:forEach>
+			</ul>
+			</div>
 			<div class="header-login-menu">
 				<ul>
-					<li><a href="admin">Вхід</a></li>
-					<li><a href="login">Вхід 1</a></li>
+					<li><a href="admin" class="login-img"></a></li>
+					<li><a href="login">Вхід</a></li>
 					<li><a href="registration">Реєстрація</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="header-center"></div>
+		<div class="header-center">
+			<div class="header-center-left">
+				<table>
+				<tr>
+					<td><img alt="" src="resources/image/happy-family.png" width="150"></td>
+				</tr>
+				</table>
+			</div>
+			<div class="header-center-center">
+			<img alt="" src="resources/image/g3676.png">
+			</div>
+			<div class="header-center-right">
+				<table>
+				<tr>
+					<td><img alt="" src="resources/image/shopping-basket.png"></td>
+				</tr>
+				<tr>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>1</td>
+				</tr>
+				
+				<tr>
+					<td><input type="text"></td>
+					<td><input type="submit" value="Пошук"></td>
+				</tr>
+				</table>
+			</div>
+		</div>
 		<div class ="header-menu"></div>
 	</div>
 <div>

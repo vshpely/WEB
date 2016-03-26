@@ -10,7 +10,7 @@
 <title>Виробники</title>
 </head>
 <body>
-	<form method="post" accept-charset="UTF-8">
+	<form method="post" accept-charset="UTF-8" action="?${_csrf.parameterName}=${_csrf.token}">
 		<label for="producerName">Виробник</label>
 		<input name="producerName" id="producerName"></input>
 		<br>

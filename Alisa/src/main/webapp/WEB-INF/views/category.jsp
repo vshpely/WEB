@@ -11,18 +11,25 @@
 <title></title>
 </head>
 <body>
-	<form method="post" accept-charset="UTF-8">
-		<label for="categoryProduct_id">Виберіть категорію</label>
-		<select name="categoryProduct_id" id="categoryProduct_id">
-		<c:forEach var="categoryproduct" items="${categoryproducts}">
-		<option value="${categoryproduct.id}">${categoryproduct.nameCategory}</option>
-		</c:forEach>
-		</select>
-		<br>
-		<label for="namePidkategory">Введіть ім'я категорії</label>
-		<input name="namePidkategory" id="namePidkategory"></input>
-		<br>
-		<input type="submit" value="OK"> 
+	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
+		<table>
+		<tr>
+			<td><label for="categoryProduct_id">Виберіть категорію</label></td>
+			<td><select name="categoryProduct_id" id="categoryProduct_id">
+			<c:forEach var="categoryproduct" items="${categoryproducts}">
+			<option value="${categoryproduct.id}">${categoryproduct.nameCategory}</option>
+			</c:forEach>
+			</select></td>
+		</tr>
+		<tr>
+			<td><label for="namePidkategory">Введіть ім'я категорії</label></td>
+			<td><input name="namePidkategory" id="namePidkategory"></input></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="OK"></td>
+		</tr>
+		</table> 
 	</form>
 	<c:forEach var="category" items="${categorys}">
 	<table>

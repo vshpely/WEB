@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 form{
-	width: 250px;
+	width: 450px;
 }
 input {
 	margin-top: 5px;
@@ -14,6 +14,9 @@ table{
 }
 td{
 	width: 100px;
-	border:1px solid grey;
-	text-align: right;
+	border:1px solid lightgrey;
+	text-align: left;
+}
+tr > td:Last-CHILD{
+	width:auto;
 }

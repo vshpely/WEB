@@ -21,9 +21,18 @@
 		</div>
 		<div class="center">
 			<div class="center-right">
-			
-			<c:forEach var="product" items="${products}">
 			<table>
+				<tr>
+					<th>ID</th>
+					<th>Артикль</th>
+					<th>Назва</th>
+					<th>Ціна</th>
+					<th>Виробник</th>
+					<th>Розмір</th>
+					<th>Категорія</th>
+					<th>Видалити</th>
+				</tr>
+			<c:forEach var="product" items="${products}">
 				<tr>
 					<td><c:url value="${product.id}"></c:url></td>
 					<td>${product.articul}</td>
@@ -32,11 +41,11 @@
 					<td>${product.producer.producerName}</td>
 					<td>${product.size.sizeName}</td>
 					<td>${product.pidCategory.namePidkategory}</td>
-					<td><a href="admin/${product.id}">delete</a></td>
+					<td><a href="admin/${product.id}"><img alt="" src="resources/image/1458580850_Delete.png">  видалити</a></td>
 				</tr>
-			</table>
+		
 			</c:forEach> 
-			
+			</table>
 			</div>
 			<div class="center-left">
 			<ul>

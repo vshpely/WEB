@@ -7,49 +7,70 @@
 <html>
 <head>
 <style type="text/css">
-<%@include file='css/form.css' %></style>
-<style>
 .error {
     color: #ff0000;
-    font-style: italic;
     font-weight: bold;
 }
-</style>
+</style> 
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<f:form method="POST" modelAttribute="user">
+	<%-- <f:form method="POST" modelAttribute="user" action="?${_csrf.parameterName}=${_csrf.token}">
 	<table >
 	<tr>
 		<td><f:label path="login">Ім`я</f:label></td>
-		<td><f:input path="login" name="login"/><br>
-		<f:errors path="login" cssClass="error" />
+		<td><f:input path="login" name="login"/></td>
+		<td><f:errors path="login" cssClass="error" /></td>
 	</tr>
 	<tr>
 		<td><f:label path="password">Пароль</f:label></td>
-		<td><f:input path="password"/>
-		<f:errors path="password" cssClass="error" />
-		</td>
+		<td><f:input path="password"/></td>
+		<td><f:errors path="password" cssClass="error" /></td>
 	</tr>
 		<tr>
 		<td><f:label path="email">E-mail</f:label></td>
-		<td><f:input path="email"/>
-		<f:errors path="email" cssClass="error" />
-		</td>
+		<td><f:input path="email"/></td>
+		<td><f:errors path="email" cssClass="error" /></td>
 	</tr>
 	<tr>
 		<td><f:label path="phone">Телефон</f:label></td>
-		<td><f:input path="phone" />
-		<f:errors path="phone" cssClass="error" />
-		</td>
+		<td><f:input path="phone" /></td>
+		<td><f:errors path="phone" cssClass="error" /><td>
 	</tr>
 	<tr>
 	<td></td>
 	<td><input type="submit" value="OK"></td>
 	</tr>
 	</table>
-	</f:form>
+	</f:form> --%>
+	
+	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
+		<table>
+			<tr>
+				<td>Введіть логін користувача</td>
+				<td><input name="login"></td>
+			</tr>
+			<tr>
+				<td>Введіть пароль користувача</td>
+				<td><input name="password"></td>
+			</tr>
+				<tr>
+				<td>Введіть Email</td>
+				<td><input name="email"></td>
+			</tr>
+			<tr>
+				<td>Введіть контактний телефон</td>
+				<td><input name="phone"></td>
+			</tr>
+		
+				
+		</table>
+		<br><input type="submit" value="OK">
+	</form>
+	
+	
 	
 	<a href="/Alisa">Назад</a>
 </body>

@@ -30,10 +30,7 @@ public class User {
 	// GenerationType.IDENTITY - не працює в mysql server
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	
 	private String login;
-
 	private String password;
 
 	@Enumerated(EnumType.ORDINAL)

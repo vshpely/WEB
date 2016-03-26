@@ -60,8 +60,6 @@
             <bean class="org.hibernate.jpa.HibernatePersistenceProvider" id="persistenceProvider" />
         </property>
     </bean>
-
-
     <tx:annotation-driven transaction-manager="transactionManager" />
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -69,5 +67,6 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"></property>
     </bean>
     
-  
+    <import resource="security.xml" />
+ 
 </beans>

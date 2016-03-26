@@ -8,32 +8,48 @@
 <title>Додати товар</title>
 </head>
 <body>
-		<form method="post" accept-charset="UTF-8">
 		
-		<label for="articul">Артикль</label><br>
-		<input name="articul" id="articul"></input><br>
-		
-		<label for="productName">Назва товару</label><br>
-		<input name="productName" id="productName"></input><br>
-		
-		<label for="price">Ціна</label><br>
-		<input name="price" id="price"></input><br>
-		
-		<label for="size">Виберіть розмір</label><br>
-		<select name="size_id" id="size">
-		<c:forEach var="size" items="${sizes}">
-		<option value="${size.id}">${size.sizeName}</option>
-		</c:forEach>
-		</select><br>
-		
-		<label for="pidCategory">Виберіть підкатегорію</label><br>
-		<select name="pidCategory_id" id="pidCategory">
-		<c:forEach var="pidCategory" items="${pidCategorys}">
-		<option value="${pidCategory.id}">${pidCategory.categoryProduct.nameCategory} - ${pidCategory.namePidkategory}</option>
-		</c:forEach>
-		</select><br>
+		<form method="post" enctype="multipart/form-data" action="?${_csrf.parameterName}=${_csrf.token}">
+		<table>
+		<tr>
+			<td><label for="articul">Артикль</label></td>
+			<td><input name="articul" id="articul"></input></td>
+		</tr>
+		<tr>
+			<td><label for="productName">Назва товару</label></td>
+			<td><input name="productName" id="productName"></input></td>
+		</tr>
+		<tr>
+			<td><label for="price">Ціна</label></td>
+			<td><input name="price" id="price"></input></td>
+		</tr>
+		<tr>
+			<td><label for="size">Виберіть розмір</label></td>
+			<td><select name="size_id" id="size">
+			<c:forEach var="size" items="${sizes}">
+			<option value="${size.id}">${size.sizeName}</option>
+			</c:forEach>
+			</select></td>
+		</tr>
+		<tr>
+			<td><label for="pidCategory">Виберіть підкатегорію</label></td>
+			<td><select name="pidCategory_id" id="pidCategory">
+			<c:forEach var="pidCategory" items="${pidCategorys}">
+			<option value="${pidCategory.id}">${pidCategory.categoryProduct.nameCategory} - ${pidCategory.namePidkategory}</option>
+			</c:forEach>
+			</select></td>
+		</tr>
+		<tr>
+			<td><label for="image">Виберіть зображення</label></td>
+			<td><input type="file" name="file" id="image"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="OK"></td>
+		</tr>
+		</table>
 		</form>
-		<input type="submit" value="OK"><br>
+		
 		<a href="/Alisa/admin">Назад</a>
 </body>
 </html>

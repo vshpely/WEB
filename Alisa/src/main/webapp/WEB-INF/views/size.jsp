@@ -11,13 +11,21 @@
 </head>
 <body>
 	
-	<form method="post" accept-charset="UTF-8">
-		<label for="sizeName">Міжнародний розмір</label>
-		<input name="sizeName" id="sizeName"></input>
-		<label for="ukrSize">Український розмір</label>
-		<input name="ukrSize" id="ukrSize"></input>
-		<br>
-		<input type="submit" value="OK"> 
+	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
+		<table>
+		<tr>
+			<td><label for="sizeName">Міжнародний розмір</label></td>
+			<td><input name="sizeName" id="sizeName"></input></td>
+		</tr>
+		<tr>
+			<td><label for="ukrSize">Український розмір</label></td>
+			<td><input name="ukrSize" id="ukrSize"></input></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="OK"></td>
+		</tr>
+		</table> 
 	</form>
 	
 	
