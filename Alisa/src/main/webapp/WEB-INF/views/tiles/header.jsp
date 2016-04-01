@@ -35,6 +35,7 @@
 				<table>
 				<tr>
 					<td><img alt="" src="resources/image/happy-family.png" width="150"></td>
+					<td><img alt="" src="resources/34/1458563654_lock.png" ></td>
 				</tr>
 				</table>
 			</div>

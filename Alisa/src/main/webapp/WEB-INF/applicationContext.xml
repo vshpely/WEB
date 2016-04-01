@@ -68,5 +68,9 @@
     </bean>
     
     <import resource="security.xml" />
- 
-</beans>
+  <!--   
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean> -->
+ 	 <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+    </bean>
+    </beans>

@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 
@@ -13,9 +16,13 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	
+	@javax.validation.constraints.Size(min = 6, max = 20, message = "імя ")
 	private String articul;
 	
+	/*@NotNull
+    @Min(value=1, message="please enter productName")
+	@Max(value=25)*/
 	private String productName;
 
 	@ManyToOne

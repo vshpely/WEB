@@ -22,6 +22,9 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.delete(id);
 		
 	}
+	public Product findById(int id){
+		return productRepository.findOne(id);
+	}
 
 	public Product getByArticle(String articul) {
 		// TODO Auto-generated method stub
@@ -29,8 +32,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public Product editProduct(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		Product nProduct = productRepository.save(product);
+		return nProduct;
 	}
 
 	public Iterable<Product> getAll() {

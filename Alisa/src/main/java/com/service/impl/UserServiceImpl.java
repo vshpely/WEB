@@ -36,6 +36,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public User editUser(User user) {
+		user.setRole(Role.ROLE_USER);
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		User editUser = userRepository.save(user);
 		return editUser;
 	}
@@ -47,5 +49,6 @@ public class UserServiceImpl implements UserService {
 	public User findById(int id) {
 		return userRepository.findOne(id);
 	}
+	
 
 }

@@ -36,6 +36,7 @@ public class User {
 	@Enumerated(EnumType.ORDINAL)
 	private Role role;
 	
+	
 	private String email;
 	private String phone;
 

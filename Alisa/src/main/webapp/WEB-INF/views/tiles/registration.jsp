@@ -17,7 +17,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- <f:form method="POST" modelAttribute="user" action="?${_csrf.parameterName}=${_csrf.token}">
+	<f:form method="POST" modelAttribute="user" action="?${_csrf.parameterName}=${_csrf.token}">
 	<table >
 	<tr>
 		<td><f:label path="login">Ім`я</f:label></td>
@@ -44,9 +44,9 @@
 	<td><input type="submit" value="OK"></td>
 	</tr>
 	</table>
-	</f:form> --%>
+	</f:form> 
 	
-	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
+	<%-- <form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
 		<table>
 			<tr>
 				<td>Введіть логін користувача</td>
@@ -69,7 +69,7 @@
 		</table>
 		<br><input type="submit" value="OK">
 	</form>
-	
+	 --%>
 	
 	
 	<a href="/Alisa">Назад</a>

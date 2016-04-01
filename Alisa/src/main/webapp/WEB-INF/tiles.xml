@@ -17,6 +17,7 @@
 	<definition name="admin.definition" template="/WEB-INF/views/tiles/admin/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/tiles/admin/header.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/admin/footer.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/admin/menu.jsp"></put-attribute>
 		<!-- Here body must be empty, values will come in child definitions -->
 		<!-- Задаєм пустим, значення будуть приходити в наступних definition -->
 		<put-attribute name="body" value=""></put-attribute> 
@@ -29,9 +30,28 @@
 		<put-attribute name="body" value="//WEB-INF/views/tiles/login.jsp"></put-attribute>
 		<put-attribute name="title" value="Авторизація"></put-attribute>
 	</definition>
+	<definition name="registration" extends="base.definition">
+		<put-attribute name="body" value="//WEB-INF/views/tiles/registration.jsp"></put-attribute>
+		<put-attribute name="title" value="Регістація"></put-attribute>
+	</definition>
 	<definition name="admin" extends="admin.definition">
 		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/admin.jsp"></put-attribute>
 		<put-attribute name="title" value="Адміністрування"></put-attribute>
 	</definition>
-	
+	<definition name="category" extends="admin.definition">
+		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/category.jsp"></put-attribute>
+		<put-attribute name="title" value="Категорії"></put-attribute>
+	</definition>
+		<definition name="size" extends="admin.definition">
+		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/size.jsp"></put-attribute>
+		<put-attribute name="title" value="Розмір"></put-attribute>
+	</definition>
+		<definition name="producer" extends="admin.definition">
+		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/producer.jsp"></put-attribute>
+		<put-attribute name="title" value="Виробник"></put-attribute>
+	</definition>
+		<definition name="product" extends="admin.definition">
+		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/product.jsp"></put-attribute>
+		<put-attribute name="title" value="Товар"></put-attribute>
+	</definition>
 </tiles-definitions>

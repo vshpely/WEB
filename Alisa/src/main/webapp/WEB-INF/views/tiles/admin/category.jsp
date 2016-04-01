@@ -5,12 +5,13 @@
 <html>
 <head>
 <style type="text/css">
-<%@include file='css/form.css' %>
+<%@include file="CSS/admin.css" %>
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 </head>
 <body>
+<div class="center-right">
 	<form method="post" action="?${_csrf.parameterName}=${_csrf.token}">
 		<table>
 		<tr>
@@ -43,5 +44,6 @@
 	</c:forEach> 
 	
 <a href="/Alisa/admin">Назад</a>
+</div>
 </body>
 </html>

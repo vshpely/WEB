@@ -4,8 +4,11 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.entity.User;
+import com.repository.UserRepository;
 
 public class UserValidator implements Validator {
+	
+	private UserRepository userRepository;
 
 	private static final String EMAIL_PATTERN =
 			"^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@"
@@ -27,6 +30,10 @@ public class UserValidator implements Validator {
 		} else if (user.getLogin().length() > 20) {
 			errors.rejectValue("login", "user.login", "занадто довгий логін");
 		}
+		/*if(userRepository.findByLogin(user.getLogin())){
+			
+		}*/
+		
 		// validation password
 		if (user.getPassword().isEmpty()) {
 			errors.rejectValue("password", "user.password", "не введено пароль");
