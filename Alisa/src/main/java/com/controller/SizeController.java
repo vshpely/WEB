@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,9 +19,13 @@ public class SizeController {
 	private SizeServiceImpl sizeService;
 	
 	@RequestMapping("/size")
-	public String show(Model model){
+	public String show(Model model, Principal principal){
+		if (principal != null){
 		model.addAttribute("sizes", sizeService.getAll());
 		return "size";
+		}else{
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(value="/size", method=RequestMethod.POST)

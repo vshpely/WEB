@@ -5,5 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.entity.Product;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
+	
+	Product findByArticul(String articul);
 
 }

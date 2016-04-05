@@ -1,8 +1,5 @@
 package com.controller;
 
-
-
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.entity.Product;
 import com.entity.Size;
@@ -61,25 +59,24 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = {"/product","/admin/edit/{id}"}, method = RequestMethod.POST)
-	public String save(@Valid @ModelAttribute Product product, BindingResult br,HttpServletRequest request, @RequestParam("file") MultipartFile file) {
+	public String save(@Valid @ModelAttribute Product product, BindingResult br, HttpServletRequest request ,Model model, @RequestParam("file") MultipartFile file) {
 		if(br.hasErrors()){
+			model.addAttribute("sizes", sizeService.getAll());
+			model.addAttribute("pidCategorys", pidCategoryServiceImpl.getAll());
 			return "product";
 		}
-		
 		productServiceImpl.editProduct(product);
 		
 		String uploadRootPath = request.getServletContext().getRealPath(
                 "resources");
-		/*String uploadRootPath = "C:\\Documents and Settings\\Administrator\\git\\WEB\\Alisa\\src\\main\\webapp\\resources";
-		String uploadRootPath = System.getProperty("catalina.base\\wtpwebapps\\Alisa\\resources\\");*/
         System.out.println("uploadRootPath=" + uploadRootPath);
         File uploadRootDir = new File(uploadRootPath +File.separator + product.getId());
         System.out.println(uploadRootDir);
-        //
+
         // Create directory if it not exists.
-        if (!uploadRootDir.exists()) {
-            uploadRootDir.mkdirs();
-        }
+		if (!uploadRootDir.exists()) {
+			uploadRootDir.mkdirs();
+		}
 		String fileName = null;
 		if (!file.isEmpty()) {
             try {
@@ -89,6 +86,10 @@ public class ProductController {
                         new BufferedOutputStream(new FileOutputStream(new File(uploadRootDir+"/" + fileName)));
                 buffStream.write(bytes);
                 buffStream.close();
+                
+                String tmpUrl ="resources"+"/"+product.getId()+"/" + fileName;
+                System.out.println(tmpUrl);
+                productServiceImpl.addUrlFile(product.getId(), tmpUrl);
                 return "redirect:/admin";
             } catch (Exception e) {
                 return "You failed to upload " + fileName + ": " + e.getMessage();

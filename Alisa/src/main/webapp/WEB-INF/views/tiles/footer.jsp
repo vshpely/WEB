@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>footer</p>
+<div class="footer">
+	<div class="footer-center">
+		<p> © 2016 Аліса </p>
+	</div>
+</div>
 </body>
 </html>

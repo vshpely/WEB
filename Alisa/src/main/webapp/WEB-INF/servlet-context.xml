@@ -28,8 +28,8 @@
 	</bean>
 
 	<mvc:annotation-driven validator="validator"/>
-	 <bean name="validator"  class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-           <property name="validationMessageSource" ref="messageSource"/>
+	 <bean id="validator"  class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+           
     </bean>
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	

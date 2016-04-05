@@ -11,12 +11,19 @@
     color: #ff0000;
     font-weight: bold;
 }
+.registration{
+	margin: 0 auto;
+	height:500px;
+	width: 400px;
+	padding-top:20px;
+	}
 </style> 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="registration">
 	<f:form method="POST" modelAttribute="user" action="?${_csrf.parameterName}=${_csrf.token}">
 	<table >
 	<tr>
@@ -73,5 +80,6 @@
 	
 	
 	<a href="/Alisa">Назад</a>
+	</div>
 </body>
 </html>

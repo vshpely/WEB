@@ -16,7 +16,9 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepository productRepository;
 
-
+	Product findByArticul(String articul){
+		return productRepository.findByArticul(articul);
+	}
 
 	public void delete(Integer id) {
 		productRepository.delete(id);
@@ -27,7 +29,6 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public Product getByArticle(String articul) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -49,6 +50,10 @@ public class ProductServiceImpl implements ProductService {
 		product.setPidCategory(pidCategory);
 		productRepository.save(product);
 	}
-
+	public void addUrlFile(int id, String url){
+		Product product = productRepository.findOne(id);
+		product.setProductPhotoUtl(url);
+		productRepository.save(product);
+	}
 
 }

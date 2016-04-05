@@ -17,22 +17,19 @@ public class ProducerServiceImpl implements ProducerService{
 		producer.setProducerName(producerName);
 		producerRepository.save(producer);
 	}
-
 	public void delete(Integer id) {
 		producerRepository.delete(id);
 	}
-
 	public Producer getByName(String producerName) {
 		return producerRepository.findByProducerName(producerName);
 	}
-
 	public Producer editProducer(Producer producer) {
 		Producer sProducer = producerRepository.save(producer);
 		return sProducer;
 	}
-
 	public Iterable<Producer> getAll() {
 		return producerRepository.findAll();
 	}
+	
 
 }

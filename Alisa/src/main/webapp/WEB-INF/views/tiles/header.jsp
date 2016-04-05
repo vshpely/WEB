@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +8,7 @@
 <%@include file="css/index.css" %>
 </style> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Аліса</title>
 </head>
 <body>
 
@@ -35,12 +36,13 @@
 				<table>
 				<tr>
 					<td><img alt="" src="resources/image/happy-family.png" width="150"></td>
-					<td><img alt="" src="resources/34/1458563654_lock.png" ></td>
 				</tr>
 				</table>
 			</div>
 			<div class="header-center-center">
-			<img alt="" src="resources/image/g3676.png">
+				<div class="contact">
+				<img alt="" src="resources/image/g3676.png">
+				</div>
 			</div>
 			<div class="header-center-right">
 				<table>
@@ -48,10 +50,10 @@
 					<td><img alt="" src="resources/image/shopping-basket.png"></td>
 				</tr>
 				<tr>
-					<td>1</td>
+					<td>Товарів в корзині: 0</td>
 				</tr>
 				<tr>
-					<td>1</td>
+					<td>Cума: 0</td>
 				</tr>
 				
 				<tr>
@@ -60,6 +62,10 @@
 				</tr>
 				</table>
 			</div>
+		</div>
+		<div class="header-bottom">
+		
+		</div>
 		</div>
 </body>
 </html>

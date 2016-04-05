@@ -5,9 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+
+import com.service.impl.ProductAnotation;
 
 @Entity
 
@@ -17,7 +16,8 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@javax.validation.constraints.Size(min = 6, max = 20, message = "імя ")
+	@ProductAnotation(message="такий артикул вже існує")
+	/*@Min(value=1, message="please enter articul")*/
 	private String articul;
 	
 	/*@NotNull
@@ -38,6 +38,9 @@ public class Product {
 
 	@ManyToOne
 	private UserOrder order;
+	
+	String productPhotoUtl;
+
 
 	public Product() {
 		super();
@@ -108,7 +111,13 @@ public class Product {
 		this.order = order;
 	}
 
+	public String getProductPhotoUtl() {
+		return productPhotoUtl;
+	}
 
+	public void setProductPhotoUtl(String productPhotoUtl) {
+		this.productPhotoUtl = productPhotoUtl;
+	}
 	
 	
 
