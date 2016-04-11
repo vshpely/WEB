@@ -1,6 +1,9 @@
 package com.service;
 
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.entity.Product;
 import com.entity.Size;
 import com.entity.pidCategory;
@@ -13,5 +16,6 @@ public interface ProductService {
 	Product getByArticle(String articul);
 	Product editProduct(Product product);
 	Iterable<Product> getAll();
+	public Page<Product>  findAllByPage(Pageable pageable);
 
 }

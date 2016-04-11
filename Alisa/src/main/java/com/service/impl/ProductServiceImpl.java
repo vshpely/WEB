@@ -2,6 +2,8 @@ package com.service.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -54,6 +56,10 @@ public class ProductServiceImpl implements ProductService {
 		Product product = productRepository.findOne(id);
 		product.setProductPhotoUtl(url);
 		productRepository.save(product);
+	}
+
+	public Page<Product> findAllByPage(Pageable pageable) {
+		return productRepository.findAll(pageable);
 	}
 
 }

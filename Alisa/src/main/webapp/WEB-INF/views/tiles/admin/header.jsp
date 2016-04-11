@@ -14,9 +14,9 @@
 <div class="header">
 		<ul>
 			<li><a href="#">
-			
 			${user.login}</a></li>
 			<li><a href="#">Особисті дані</a></li>
+			<li><a href="<c:url value="/list" />">jqGrid</a></li>
 			<li><a href="<c:url value="/logout" />">Вийти</a></li>
 		</ul>
 </div>

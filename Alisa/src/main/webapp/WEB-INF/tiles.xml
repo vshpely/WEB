@@ -54,4 +54,8 @@
 		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/product.jsp"></put-attribute>
 		<put-attribute name="title" value="Товар"></put-attribute>
 	</definition>
+		<definition name="list" extends="admin.definition">
+		<put-attribute name="body" value="//WEB-INF/views/tiles/admin/list.jsp"></put-attribute>
+		<put-attribute name="title" value="jqGrid"></put-attribute>
+	</definition>
 </tiles-definitions>
